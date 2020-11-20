@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B44EEAD25684B3500348EDE /* what'll it be? in Resources */ = {isa = PBXBuildFile; fileRef = 1B44EEAC25684B3500348EDE /* what'll it be? */; };
+		1B44EEAF25684BF900348EDE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1B44EEAE25684BF900348EDE /* README.md */; };
 		1B68735B24F6F0290077A515 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B68735A24F6F0290077A515 /* AppDelegate.swift */; };
 		1B68735D24F6F0290077A515 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B68735C24F6F0290077A515 /* SceneDelegate.swift */; };
 		1B68735F24F6F0290077A515 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B68735E24F6F0290077A515 /* ViewController.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B44EEAC25684B3500348EDE /* what'll it be? */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "what'll it be?"; sourceTree = SOURCE_ROOT; };
+		1B44EEAE25684BF900348EDE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		1B68735724F6F0290077A515 /* what'll it be?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "what'll it be?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B68735A24F6F0290077A515 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B68735C24F6F0290077A515 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +90,8 @@
 				1B68735E24F6F0290077A515 /* ViewController.swift */,
 				1B68736024F6F0290077A515 /* Main.storyboard */,
 				1B68737C24F6F1390077A515 /* guessOrder.swift */,
+				1B44EEAE25684BF900348EDE /* README.md */,
+				1B44EEAC25684B3500348EDE /* what'll it be? */,
 				1B68736324F6F02E0077A515 /* Assets.xcassets */,
 				1B68736524F6F02E0077A515 /* LaunchScreen.storyboard */,
 				1B68736824F6F02E0077A515 /* Info.plist */,
@@ -183,7 +189,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B44EEAD25684B3500348EDE /* what'll it be? in Resources */,
 				1B68736724F6F02E0077A515 /* LaunchScreen.storyboard in Resources */,
+				1B44EEAF25684BF900348EDE /* README.md in Resources */,
 				1B68736424F6F02E0077A515 /* Assets.xcassets in Resources */,
 				1B68736224F6F0290077A515 /* Main.storyboard in Resources */,
 			);
