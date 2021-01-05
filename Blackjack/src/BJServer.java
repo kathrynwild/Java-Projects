@@ -166,7 +166,7 @@ public class BJServer extends JFrame {
                         sendData(p1FaceCards[4]);
                         count++;
                     }
-                    else if(count == 3){
+                    else if(count == 3) {
                         p1Cards[5] = rand.nextInt(12);
                         p1FaceCards[5] = Deck.getFace(p1Cards[5]);
                         sendData(p1FaceCards[5]);
@@ -175,13 +175,16 @@ public class BJServer extends JFrame {
 
                     // if total goes over 21 finish the players turn
                     if(getP1Total() > 21){
-                        sendData("finish");
+                        sendData("finish \n Total exceeded 21 \n YOU LOSE");
                         over = 1;
                     }
                 }
 
                 int ct=2;
                 if(message.contains("stay") || over == 1){
+                    sendData("DEALERS CARDS: ");
+                    sendData(dealerFaceCards[0] + "\n" + dealerFaceCards[1]);
+
                     //dealer plays until total is over 17
                     while(getDealerTotal() <= 17){
                         displayMessage("\n Dealer hits.");
@@ -189,21 +192,28 @@ public class BJServer extends JFrame {
                         dealerCards[ct] = rand.nextInt(12);
                         dealerFaceCards[ct] = Deck.getFace(dealerCards[ct]);
                         displayMessage("\n" + dealerFaceCards[ct]);
+                        sendData(dealerFaceCards[ct]);
                         ct++;
                     }
 
                     //display winner
-                    if(getP1Total() > 21 && getDealerTotal() > 21){
+                    if((getP1Total() > 21 && getDealerTotal() > 21) || (getP1Total() == getDealerTotal())){
                         displayMessage("\nTie. \n player total was " + getP1Total() + " and " +
+                                "dealer total was " + getDealerTotal() + ".");
+                        sendData("\nTie. \n player total was " + getP1Total() + " and " +
                                 "dealer total was " + getDealerTotal() + ".");
                     }
                     else if(getP1Total() > getDealerTotal()){
                         if(getP1Total() <=21){
                             displayMessage("\nPlayer wins. \n player total was " + getP1Total() + " and " +
                                     "dealer total was " + getDealerTotal() + ".");
+                            sendData("\nPlayer wins. \n player total was " + getP1Total() + " and " +
+                                    "dealer total was " + getDealerTotal() + ".");
                         }
                         else{
                             displayMessage("\nDealer wins. \n player total was " + getP1Total() + " and " +
+                                    "dealer total was " + getDealerTotal() + ".");
+                            sendData("\nDealer wins. \n player total was " + getP1Total() + " and " +
                                     "dealer total was " + getDealerTotal() + ".");
                         }
                     }
@@ -211,9 +221,13 @@ public class BJServer extends JFrame {
                         if(getDealerTotal() <=21){
                             displayMessage("\nDealer wins. \n player total was " + getP1Total() + " and " +
                                     "dealer total was " + getDealerTotal() + ".");
+                            sendData("\nDealer wins. \n player total was " + getP1Total() + " and " +
+                                    "dealer total was " + getDealerTotal() + ".");
                         }
                         else{
                             displayMessage("\nPlayer wins. \n player total was " + getP1Total() + " and " +
+                                    "dealer total was " + getDealerTotal() + ".");
+                            sendData("\nPlayer wins. \n player total was " + getP1Total() + " and " +
                                     "dealer total was " + getDealerTotal() + ".");
                         }
                     }
