@@ -62,6 +62,8 @@ public class BJServer extends JFrame {
                         dealerFaceCards[1] = Deck.getFace(dealerCards[1]);
                         displayMessage("\n" +dealerFaceCards[0]);
                         displayMessage("\n" +dealerFaceCards[1]);
+                        sendData("Dealer's First Card: ");
+                        sendData(dealerFaceCards[0]);
 
                     }
                 }
@@ -147,6 +149,7 @@ public class BJServer extends JFrame {
                 int over = 0;
                 // if hit button is pressed on client screen
                 if(message.contains("hit")){
+                    sendData("Player hits: ");
                     if(count == 0){
                         //add to player card array and display card
                         p1Cards[2] = rand.nextInt(12);
@@ -186,7 +189,7 @@ public class BJServer extends JFrame {
                     sendData(dealerFaceCards[0] + "\n" + dealerFaceCards[1]);
 
                     //dealer plays until total is over 17
-                    while(getDealerTotal() <= 17){
+                    while(getDealerTotal() <= 16){
                         displayMessage("\n Dealer hits.");
                         Thread.sleep(1000); //slow down so player can watch dealer hit
                         dealerCards[ct] = rand.nextInt(12);
